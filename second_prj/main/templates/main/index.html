@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}Index{% endblock %}</title>
+</head>
+<body>
+<div>
+    {% block content %}
+    {% if books %}
+        {% for book in books %}
+            <h1><a href="{% url 'detail_view' book.id %}">{{ book.author.name }}</a></h1>
+            <h2>{{ book.title }}</h2>
+            <h3>{{ book.text }}</h3>
+            <img src="{{ book.image.url }}" alt="{{ book.title }}" width="600px" height="600px">
+        {% endfor %}
+    {% elif update_book %}
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button>Update</button>
+            </form>
+                <div>
+                    {{ form.email.label_tag }}<br>
+                    {{ form.email }}
+                    {% if form.email.errors %}
+                        <div class="error">
+                            {{ form.email.errors }}
+                        </div>
+                    {% endif %}
+                </div>
+                <form method="GET">
+                    {% csrf_token %}
+                    {{ form.as_div }}
+                    <button name="test_get_btn">GET</button>
+                </form>
+
+    {% endif %}
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button>Send</button>
+        </form>
+<!--        <form method="get">-->
+<!--            <button name="test_btn" value="10000">TEST</button>-->
+<!--        </form>-->
+    {% endblock %}
+</div>
+</body>
+</html>

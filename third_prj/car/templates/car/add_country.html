@@ -1,0 +1,10 @@
+{% extends 'car/car.html' %}
+{% block title %}Country form{% endblock %}
+{% block content %}
+    <h3>Country Form</h3>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add country in database</button>
+    </form>
+{% endblock %}

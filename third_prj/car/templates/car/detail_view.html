@@ -1,0 +1,9 @@
+{% extends 'car/car.html' %}
+{% block title %}Detail View{% endblock %}
+{% block content %}
+    <h3>Car Manufacturer: {{ car.manufacturer }} (Factory: {{ car.manufacturer.country }})</h3>
+    <h3>Model: {{ car.car_model }}</h3>
+    <h3>Engine Model: {{ car.engine_model }} (Horse Power: {{ car.engine_model.horse_power }})</h3>
+    <h1>Year of manufacture: {{ car.release_date }}</h1>
+    <img src="{{ car.car_image.url }}" alt="{{ car.car_model }}">
+{% endblock %}

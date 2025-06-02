@@ -1,0 +1,10 @@
+{% extends 'car/car.html' %}
+{% block title %}Manufacturer{% endblock %}
+{% block content %}
+    <h3>Create Superuser</h3>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add new superuser</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends 'verification/registration.html' %}
+{% block title %}Login{% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+  <h1>Welcome {{ user }}!</h1>
+  <h2>{{ user.email }}</h2>
+  <br>
+  <br>
+  <a href="{% url 'logout_view' %}"><button>Logout</button></a>
+{% else %}
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Login</button>
+  </form>
+{% endif %}
+{% endblock %}

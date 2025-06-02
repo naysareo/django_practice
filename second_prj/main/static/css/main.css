@@ -1,0 +1,48 @@
+/* Общие стили для всего сайта */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* Контейнер для страницы */
+main {
+    max-width: 960px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Ссылки */
+a {
+    text-decoration: none;
+    color: #007BFF;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Навбар */
+nav {
+    background: #333;
+    padding: 15px;
+}
+
+nav a {
+    color: white;
+    margin-right: 20px;
+}
+
+/* Футер */
+footer {
+    background: #222;
+    color: #ccc;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}

@@ -1,0 +1,16 @@
+{% extends 'car/car.html' %}
+{% block title %}Register{% endblock %}
+{% block content %}
+    {% if not user.is_authenticated %}
+        <h3>Register Form</h3>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Register a regular user</button>
+            <button type="submit" name="super-user-btn">Register a superuser</button>
+        </form>
+    {% else %}
+    <h4>You already i system {{ user.username }}</h4>
+    <button><a href="{% url 'logout' %}">Logout</a></button>
+    {% endif %}
+{% endblock %}

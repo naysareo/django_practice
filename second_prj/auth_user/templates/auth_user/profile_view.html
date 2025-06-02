@@ -1,0 +1,12 @@
+{% extends 'auth_user/register.html' %}
+
+{% block title %}Profile Edit{% endblock %}
+
+{% block content %}
+      <h1>Hello {{ user_obj.username }}!</h1>
+      <br>
+      <h3>Your data:</h3>
+      <br>
+      <p>{{ user_obj.username }}</p>
+      <p>{{ user_obj.email }}</p>
+{% endblock %}

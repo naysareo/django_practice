@@ -1,0 +1,10 @@
+{% extends 'car/car.html' %}
+{% block title %}Engine{% endblock %}
+{% block content %}
+    <h3>Engine Form</h3>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add new Engine</button>
+    </form>
+{% endblock %}
