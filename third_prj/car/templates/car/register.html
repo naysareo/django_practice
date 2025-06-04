@@ -10,7 +10,7 @@
             <button type="submit" name="super-user-btn">Register a superuser</button>
         </form>
     {% else %}
-    <h4>You already i system {{ user.username }}</h4>
+    <h4>You already in system {{ user.email }}</h4>
     <button><a href="{% url 'logout' %}">Logout</a></button>
     {% endif %}
 {% endblock %}

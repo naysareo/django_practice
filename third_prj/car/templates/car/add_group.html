@@ -1,0 +1,10 @@
+{% extends 'car/car.html' %}
+{% block title %}Permissions{% endblock %}
+{% block content %}
+    <h3>Add Group</h3>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add group</button>
+    </form>
+{% endblock %}

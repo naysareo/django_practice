@@ -11,7 +11,7 @@
     <div>
         {% block content %}
             <h1>Car list: {{ user }}</h1>
-            {% for car in object_list %}
+            {% for car in page_obj %}
                 <br>
                 <h1><a href="{% url 'detail_view' car.id %}">{{ car.manufacturer.name }} {{ car.car_model }}</a></h1>
                 <h2>Engine: {{ car.engine_model }}</h2>
@@ -19,6 +19,17 @@
                 <br>
             {% endfor %}
         {% endblock %}
+    </div>
+    <div class="paginator">
+        {% if page_obj.has_previous %}
+            <a href="?page=1">Первая</a>
+            <a href="?page={{ page_obj.previous_page_number }}">Назад</a>
+        {% endif %}
+        <span>{{ page_obj.number }} из {{ page_obj.paginator.num_pages }}</span>
+        {% if page_obj.has_next %}
+            <a href="?page={{ page_obj.next_page_number }}">Вперед</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">Последняя</a>
+        {% endif %}
     </div>
 </body>
 </html>

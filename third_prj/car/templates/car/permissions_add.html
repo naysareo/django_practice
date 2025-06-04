@@ -1,0 +1,9 @@
+{% extends 'car/car.html' %}
+{% block title %}Permissions{% endblock %}
+{% block content %}
+    <h3>Permissions for Car</h3>
+        <h1>Admin profile: {{ user }}</h1>
+        {% for perm in permissions %}
+            <h2>{{ perm.name }}</h2> <button type="submit">+</button>
+        {% endfor %}
+{% endblock %}

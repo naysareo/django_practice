@@ -42,8 +42,8 @@ class Car(models.Model):
         return f"{self.manufacturer} {self.car_model} ({self.engine_model})"
 
     class Meta:
-        verbose_name = 'MyCar'
-        verbose_name_plural = 'MyCars'
+        verbose_name = 'Car'
+        verbose_name_plural = 'Cars'
         ordering = ('-manufacturer', )
 
 
@@ -79,4 +79,8 @@ class CustomerUser(AbstractBaseUser, PermissionsMixin):
     objects = CustomUserManager()
 
     def __str__(self):
-        return self.username
+        return self.email
+
+    class Meta:
+        verbose_name = 'User'
+        verbose_name_plural = 'Users'

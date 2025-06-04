@@ -1,0 +1,11 @@
+{% extends 'car/car.html' %}
+{% block title %}Permissions{% endblock %}
+{% block content %}
+    {% load cache %}
+    {% cache 60 sidebar %}
+    <h3>Permissions</h3>
+        <h1>Admin profile: {{ user }}</h1>
+        <h2>{{ permission.name }}</h2> <button type="submit">+</button>
+        <h1>random value: {{ random_value }}</h1>
+    {% endcache %}
+{% endblock %}

@@ -6,4 +6,7 @@
     <h3>Engine Model: {{ car.engine_model }} (Horse Power: {{ car.engine_model.horse_power }})</h3>
     <h1>Year of manufacture: {{ car.release_date }}</h1>
     <img src="{{ car.car_image.url }}" alt="{{ car.car_model }}">
+    <form method="get">
+        <button name="add-user">Add user</button>
+    </form>
 {% endblock %}
